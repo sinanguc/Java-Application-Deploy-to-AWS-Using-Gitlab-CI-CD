@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:productdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+
+server:
+  port: 5000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    version: CI_PIPELINE_IID
+    commit: CI_COMMIT_SHORT_SHA
+    branch: CI_COMMIT_BRANCH
